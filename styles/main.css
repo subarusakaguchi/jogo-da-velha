@@ -1,0 +1,32 @@
+.square {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: var(--red);
+    border: 2px solid black;
+}
+
+.o::after {
+    content: "\1F6E1";
+    color: white;
+    font-size: 70px;
+    line-height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.x::after {
+    content: "\2694";
+    color: white;
+    font-size: 70px;
+    line-height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

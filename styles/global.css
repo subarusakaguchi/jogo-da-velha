@@ -1,0 +1,35 @@
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+/* Variáveis */
+html {
+    --red: #D72638;
+    --brown: #3E000C;
+    --violet: #E18AD4;
+    --lightBlue: #A0DDFF;
+    --purple: #624CAB;
+    --mainFont: Arial, Helvetica, sans-serif;
+    --secondaryFont: "Monaco", monospace;
+
+    /* Alteração para fazer rem = px em uma escala 1:1 */
+    font-size: 6.25%;
+}
+
+body {
+    text-align: center;
+    background-color: var(--brown);
+}
+
+h1 {
+    font-family: var(--mainFont);
+    font-size: clamp(45px, 5vw, 50rem);
+    color: var(--red);
+    padding: 40px 0 40px 0;
+}
