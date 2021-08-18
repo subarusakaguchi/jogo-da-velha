@@ -33,3 +33,13 @@ h1 {
     color: var(--red);
     padding: 40px 0 40px 0;
 }
+
+h3 {
+    font-family: var(--secondaryFont);
+    font-size: clamp(28px, 3vw, 30rem);
+    color: var(--purple);
+}
+
+strong {
+    color: var(--red);
+}
