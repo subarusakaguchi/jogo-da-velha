@@ -2,7 +2,7 @@ var board = ['', '', '', '', '', '', '', '', '']
 var player = 0
 var symbols = ['o', 'x']
 var playerName = ['', '']
-var wins = [0, 0]
+var wins = [0, 0, 0]
 var gameOver = false
 let winStates = [
     [0, 1, 2],
@@ -25,8 +25,16 @@ function handleMove(position) {
 
         gameOver = isWin()
 
+        let draw = board.every((item) => {
+            return item != ''
+        })
+
         if (!gameOver){    
             player = player == 0? 1:0
+        }
+
+        if (!gameOver && draw) {
+            return 'draw'
         }
     }
 
@@ -52,4 +60,5 @@ function resetRound() {
     board = ['', '', '', '', '', '', '', '', '']
     player = 0
     gameOver = false
+    cleanSquares()
 }
