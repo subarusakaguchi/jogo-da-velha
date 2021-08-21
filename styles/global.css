@@ -40,6 +40,21 @@ h3 {
     color: var(--purple);
 }
 
+button {
+    font-family: var(--secondaryFont);
+    font-size: clamp(24px, 3vw, 28rem);
+    color: var(--brown);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: var(--red);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: brown;
+}
+
 strong {
     color: var(--red);
 }

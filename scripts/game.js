@@ -4,6 +4,13 @@ var symbols = ['o', 'x']
 var playerName = ['', '']
 var wins = [0, 0, 0]
 var gameOver = false
+var saveGame = {
+    player0:'', 
+    player1:'', 
+    win0:0, 
+    win1:0, 
+    empates:0
+}
 let winStates = [
     [0, 1, 2],
     [3, 4, 5],
@@ -56,9 +63,52 @@ function isWin() {
     return false
 }
 
+function result(msg) {
+    setTimeout(() => {
+        alert(msg)
+        if (msg === 'Empate!') {
+            wins[2] = ++wins[2]
+            attScore()
+            resetRound()
+        } else {
+            wins[player] = ++wins[player]
+            attScore()
+            resetRound()
+        }
+    }, 10)
+}
+
 function resetRound() {
     board = ['', '', '', '', '', '', '', '', '']
     player = 0
     gameOver = false
     cleanSquares()
+}
+
+function resetGame() {
+    let verify = confirm('A partida será terminada, os pontos zerados, um vencedor declado e uma nova partida iniciada. Deseja continuar?')
+    if (verify) {
+        let winner = isWinner()
+        if (winner === 'Empate!') {
+            alert(`O resultado foi um empate! com ${wins[0]} vitórias cada`)
+        } else {
+            alert(`O vencedor foi o(a) jogador(a) ${playerName[winner]} com ${wins[winner]} vitórias! em um total de ${wins.reduce((a, b) => a + b, 0)} partidas!`)
+        }
+        localStorage.clear()
+        wins = [0, 0, 0]
+        playerName = ['', '']
+        resetRound()
+        getNames()
+        start()
+    }
+}
+
+function isWinner() {
+    if (wins[0] > wins[1]) {
+        return 0
+    } else if (wins[1] > wins[0]) {
+        return 1
+    } else {
+        return 'Empate!'
+    }
 }
