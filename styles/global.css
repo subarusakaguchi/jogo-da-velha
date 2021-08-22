@@ -27,6 +27,10 @@ body {
     background-color: var(--brown);
 }
 
+footer {
+    margin-top: 20px;
+}
+
 h1 {
     font-family: var(--mainFont);
     font-size: clamp(45px, 5vw, 50rem);
@@ -53,6 +57,17 @@ button {
 
 button:hover {
     background-color: brown;
+}
+
+a {
+    font-family: var(--mainFont);
+    font-size: clamp(20px, 3vw, 25rem);
+    font-weight: bolder;
+    color: var(--red);
+}
+
+a:hover {
+    color: var(--purple);
 }
 
 strong {
